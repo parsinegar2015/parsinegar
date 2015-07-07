@@ -1,0 +1,3 @@
+RewriteEngine On
+# you can add whatever extensions you want routed to your php script
+RewriteRule ^(.*)$ - [F,L,NC]

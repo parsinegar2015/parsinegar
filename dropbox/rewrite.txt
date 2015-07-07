@@ -1,0 +1,21 @@
+RewriteEngine On
+# you can add whatever extensions you want routed to your php script
+RewriteCond %{REQUEST_URI} \.(pdf)$ [NC]
+RewriteRule ^(.*)$ {HTTP_HOST} [L]
+
+
+
+
+//header('Content-Type: image/jpeg');
+//header("Content-Length: " . filesize($file));
+/*echo $image = file_get_contents($file);
+
+ob_start();
+
+    imagejpeg($image, null, 100);  
+    //base64_encode(
+    $final_image = ob_get_contents();
+
+    ob_end_clean();
+	echo $final_image;
+*/	

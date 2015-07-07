@@ -1,0 +1,41 @@
+﻿<?php
+
+/**
+ * Download a file and its metadata
+ * The object returned will contain the file name, MIME type, metadata 
+ * (obtained from x-dropbox-metadata HTTP header) and file contents
+ * @link https://www.dropbox.com/developers/reference/api#files-GET
+ * @link https://github.com/BenTheDesigner/Dropbox/blob/master/Dropbox/API.php#L129-168
+ */
+
+// Require the bootstrap
+require_once('dropbox/examples/bootstrap.php');
+
+// Set the file path
+// You will need to modify $path or run putFile.php first
+$path = 'db-backup_15-03-25_01-03-03.sql'; //'api_upload_test.txt';
+
+// Set the output file
+// If $outFile is set, the downloaded file will be written
+// directly to disk rather than storing file data in memory
+$outFile = false;
+
+try {
+    // Download the file
+    $file = $dropbox->getFile($path, $outFile);
+	echo $file['data'];
+    //var_dump($file);
+} catch (\Dropbox\Exception\NotFoundException $e) {
+    // The file wasn't found at the specified path/revision
+    echo 'The file was not found at the specified path/revision';
+}
+
+
+/*
+$metaData = $dropbox->metaData('');
+
+foreach($metaData['body']->contents as $file){
+    $f = str_replace("/", "", $file->path);
+    echo "<li>$f</li>";
+}
+*/

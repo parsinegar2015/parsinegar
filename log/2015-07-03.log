@@ -1,0 +1,131 @@
+
+_____________________________________________________________________________________________
+
+
+
+LOG FILE [2015-07-03]
+
+_____________________________________________________________________________________________
+
+
+
+
+2015-07-03 16:29:50 [::1] : INFO - [ADD] Insert New Record, Article module successfully inserted a new record in the table article
+
+
+ =TraceInfo ========================
+
+ [file] => {closure}
+
+ [line] => undefined
+
+ [function] => undefined
+
+ [user] => 9312204656
+
+ [data] => 
+
+ ================================
+ 
+2015-07-03 17:05:17 [::1] : INFO - [ADD] Insert New Record, Article module successfully inserted a new record in the table article
+
+
+ =TraceInfo ========================
+
+ [file] => {closure}
+
+ [line] => undefined
+
+ [function] => undefined
+
+ [user] => 9312204656
+
+ [data] => 
+
+ ================================
+ 
+2015-07-03 17:06:20 [::1] : INFO - [ADD] Insert New Record, Article module successfully inserted a new record in the table article
+
+
+ =TraceInfo ========================
+
+ [file] => {closure}
+
+ [line] => undefined
+
+ [function] => undefined
+
+ [user] => 9312204656
+
+ [data] => 
+
+ ================================
+ 
+2015-07-03 17:17:02 [::1] : INFO - [DELETE] Remove Record, 1 row(s) of records deleted
+
+
+ =TraceInfo ========================
+
+ [file] => {closure}
+
+ [line] => undefined
+
+ [function] => undefined
+
+ [user] => 9312204656
+
+ [data] => article=2
+
+ ================================
+ 
+2015-07-03 19:51:39 [::1] : ERROR - [ADD] Prevent the insertion of new records, Avoid incorrect information
+
+
+ =TraceInfo ========================
+
+ [file] => {closure}
+
+ [line] => undefined
+
+ [function] => undefined
+
+ [user] => 9312204656
+
+ [data] => 
+
+ ================================
+ 
+2015-07-03 19:52:22 [::1] : ERROR - [ADD] Prevent the insertion of new records, Avoid incorrect information
+
+
+ =TraceInfo ========================
+
+ [file] => {closure}
+
+ [line] => undefined
+
+ [function] => undefined
+
+ [user] => 9312204656
+
+ [data] => 
+
+ ================================
+ 
+2015-07-03 19:52:49 [::1] : INFO - [ADD] Insert New Record, Article module successfully inserted a new record in the table article
+
+
+ =TraceInfo ========================
+
+ [file] => {closure}
+
+ [line] => undefined
+
+ [function] => undefined
+
+ [user] => 9312204656
+
+ [data] => 
+
+ ================================
+ 

@@ -1,0 +1,1 @@
+$("input[name=type]").click(function(){$("#save_btn").fadeIn("slow");if($(this).val()==1){$(".external").fadeOut("slow",function(){$(".internal").fadeIn("slow");});}else{$(".internal").fadeOut("slow",function(){$(".external").fadeIn("slow");});}});$(".msg").delay(2000).fadeOut("slow",function(){$(this).remove();});

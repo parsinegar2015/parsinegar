@@ -1,0 +1,63 @@
+
+_____________________________________________________________________________________________
+
+
+
+LOG FILE [2015-06-19]
+
+_____________________________________________________________________________________________
+
+
+
+
+2015-06-19 20:58:25 [::1] : INFO - [UPLOAD] Uploaded New File, 1 file(s) successfully added to the cms file manager
+
+
+ =TraceInfo ========================
+
+ [file] => C:\xampp\htdocs\filemanager_cms.php
+
+ [line] => 524
+
+ [function] => upload
+
+ [user] => sysadmin
+
+ [data] => 
+
+ ================================
+ 
+2015-06-19 21:07:27 [::1] : INFO - [UPLOAD] Uploaded New File, 1 file(s) successfully added to the cms file manager
+
+
+ =TraceInfo ========================
+
+ [file] => C:\xampp\htdocs\filemanager_cms.php
+
+ [line] => 525
+
+ [function] => upload
+
+ [user] => sysadmin
+
+ [data] => 
+
+ ================================
+ 
+2015-06-19 21:08:05 [::1] : INFO - [UPLOAD] Uploaded New File, 1 file(s) successfully added to the cms file manager
+
+
+ =TraceInfo ========================
+
+ [file] => C:\xampp\htdocs\filemanager_cms.php
+
+ [line] => 526
+
+ [function] => upload
+
+ [user] => sysadmin
+
+ [data] => 
+
+ ================================
+ 

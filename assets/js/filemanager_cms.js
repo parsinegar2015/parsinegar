@@ -1,0 +1,21 @@
+define([],function(){$(function(){$(".delete").live("click",function(){self=$(this);if(self.is(":checked")){self.parent().parent().css("background","#FF7F50");$("#del_title input").prop("disabled",false);}else{self.parent().parent().css("background","");if(!$(".delete:checked").length){$("#del_title input").prop("disabled",true);}}});$(".copy").on("copy",function(e){e.clipboardData.clearData();e.clipboardData.setData("text/plain",$(this).data("url"));e.preventDefault();}).on("aftercopy",function(e){alert("Copy succeeded");});document.addEventListener("DOMNodeInserted",function(e){$(".copy").on("copy",function(e){e.clipboardData.clearData();e.clipboardData.setData("text/plain",$(this).data("url"));e.preventDefault();}).on("aftercopy",function(e){alert("Copy succeeded");});});$(".file_frm").submit(function(e){uploadFile(e);});});function in_array(needle,haystack,argStrict){var key="",strict=!!argStrict;if(strict){for(key in haystack){if(haystack[key]===needle){return true;}}}else{for(key in haystack){if(haystack[key]==needle){return true;}}}
+return false;}
+function sleep(milliseconds){var start=new Date().getTime();for(var i=0;i<1e7;i++){if((new Date().getTime()-start)>milliseconds){break;}}}
+function startproccess(){$("form.file_frm").fadeOut("fast",function(){$("#ajaxupload").fadeIn("slow");});$("#prgtooltip div").fadeIn("slow");return true;}
+function endproccess(){$("#ajaxupload").fadeOut("fast",function(){$("form.file_frm").fadeIn("slow");$("#prgtooltip div").fadeOut("fast",function(){$("#prgtooltip div").html("");$("#prg2").css("width","0px");});});return true;}
+function addrow(data){var $row_tpl='<div class="row"> \
+<div><input type="checkbox" name="delete[]" class="delete" value="{id}"/></div> \
+<div>{size}</div> \
+<div><b>{type}</b></div> \
+<div><img src="http://localhost/assets/img/link.png" class="copy" data-url="http://localhost/{name}"/>{title}</div> \
+<div class="file_row_id">{row_number}</div> \
+</div>';var row_number=1;if($(".file_row_id").length>0){row_number=$(".file_row_id").length;++row_number;}
+$row=$row_tpl;$row=$row.replace("{name}",data.name);$row=$row.replace("{size}",data.size);$row=$row.replace("{title}",data.title);$row=$row.replace("{type}",data.type);$row=$row.replace("{id}",data.id);$row=$row.replace("{row_number}",row_number);$("#file_grid").append($row);}
+function _(el){return document.getElementById(el);}
+function uploadFile(event){event.preventDefault();var ext4=$("#file").val().substr(-4);var ext2=$("#file").val().substr(-2);if($("input[name=title]").val().match(/^[\s\t\r\n]*\S+/ig)&&(in_array(ext4,[".pdf",".jpg",".png",".gif",".bmp",".zip",".rar",".doc","docx",".ppt",".xls","xlsx",".txt",".mp3",".mp4"])||ext2=="gz")){if(startproccess()){var file=_("file").files[0];var formdata=new FormData();formdata.append("file",file);formdata.append("title",$("input[name=title]").val());var ajax=new XMLHttpRequest();ajax.upload.addEventListener("progress",progressHandler,false);ajax.addEventListener("error",errorHandler,false);ajax.addEventListener("abort",abortHandler,false);ajax.onreadystatechange=function(){if(ajax.readyState==4&&ajax.status==200){setTimeout(function(){endproccess();if(ajax.responseText!="Error"){var j=jQuery.parseJSON(ajax.responseText);if(j.error==0){alert("فایل شما با موفقیت آپلود گردید");addrow(j);}}else{alert("عملیات با خطا مواجه گردید");}},4000);}}
+ajax.open("POST","http://localhost/filemanager/?do=upload&token=ff4772e1500c83b421bc382214fa496daef9866baf533d96a2120f3ff0b3e509",true);ajax.setRequestHeader("X-Requested-With","XMLHttpRequest");ajax.send(formdata);}}}
+function progressHandler(event){var percent=(event.loaded/event.total)*100;_("prg2").innerHTML=Math.round(percent)+"%";$("#prgtooltip div").html(Math.round(percent)+"%");prg=Math.round(percent)*5;_("prg2").style.width=prg+"px";}
+function completeHandler(event){if(endproccess()){if(isJson(event.target.responseText)){var j=jQuery.parseJSON(event.target.responseText);if(j.error==0){alert("فایل شما با موفقیت آپلود گردید");}}else{alert("عملیات با خطا مواجه گردید");}}}
+function errorHandler(event){endproccess()
+alert("Error");}
+function abortHandler(event){endproccess();alert("Error");}});

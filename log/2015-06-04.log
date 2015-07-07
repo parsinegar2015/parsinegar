@@ -1,0 +1,80 @@
+
+_____________________________________________________________________________________________
+
+
+
+LOG FILE [2015-06-04]
+
+_____________________________________________________________________________________________
+
+
+
+
+2015-06-04 18:54:02 [::1] : ERROR - [UPLOAD] Prevent the upload new file, Avoid incorrect information
+
+
+ =TraceInfo ========================
+
+ [file] => C:\xampp\htdocs\filemanager_cms.php
+
+ [line] => 500
+
+ [function] => upload
+
+ [user] => admin
+
+ [data] => 1
+
+ ================================
+ 
+2015-06-04 19:13:04 [::1] : ERROR - [UPLOAD] Prevent the upload new file, Avoid incorrect information
+
+
+ =TraceInfo ========================
+
+ [file] => C:\xampp\htdocs\filemanager_cms.php
+
+ [line] => 523
+
+ [function] => upload
+
+ [user] => admin
+
+ [data] => 1
+
+ ================================
+ 
+2015-06-04 19:13:49 [::1] : ERROR - [UPLOAD] Prevent the upload new file, Avoid incorrect information
+
+
+ =TraceInfo ========================
+
+ [file] => C:\xampp\htdocs\filemanager_cms.php
+
+ [line] => 524
+
+ [function] => upload
+
+ [user] => admin
+
+ [data] => 1
+
+ ================================
+ 
+2015-06-04 19:14:24 [::1] : ERROR - [UPLOAD] Prevent the upload new file, Avoid incorrect information
+
+
+ =TraceInfo ========================
+
+ [file] => C:\xampp\htdocs\filemanager_cms.php
+
+ [line] => 524
+
+ [function] => upload
+
+ [user] => admin
+
+ [data] => 1
+
+ ================================
+ 

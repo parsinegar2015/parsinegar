@@ -1,0 +1,28 @@
+2005-03-19 15:10:26,618 - simple_example - DEBUG - debug message
+2005-03-19 15:10:26,620 - simple_example - INFO - info message
+2005-03-19 15:10:26,695 - simple_example - WARNING - warn message
+2005-03-19 15:10:26,697 - simple_example - ERROR - error message
+2005-03-19 15:10:26,773 - simple_example - CRITICAL - critical message
+
+_____________________________________________________________________________________________
+
+LOG FILE [2005-03-19]
+_____________________________________________________________________________________________
+2005-03-19 15:10:26 [89.144.189.10] : INFO - [EDIT] Update Record, {msg}
+=TraceInfo ====================
+[file] => C:\xampp\htdocs\article\index.php
+[line] => 50
+[function] => test
+[user] => 
+============================
+
+_log('info_add','Article module successfully inserted a new record in the table article');
+
+_log('critical_edit','Invalid ID was used','id='.$_POST['edit']);
+
+_log('error_add','Avoid incorrect information');
+
+$affected_rows = $stmt->execute();
+_log('info_delete',$affected_rows.' row(s) of records deleted','article='.$_GET['article']);
+
+

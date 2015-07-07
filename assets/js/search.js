@@ -1,0 +1,1 @@
+define([],function(){$(function(){$("#show_advance").click(function(){$(".box_advance_search .advance").slideToggle("slow");});$("form[name=sForm]").submit(function(event){if(!$("#q").val().match(/^[\s\t\r\n]*\S+/ig)){event.preventDefault();}});});});

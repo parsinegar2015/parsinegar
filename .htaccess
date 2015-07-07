@@ -1,0 +1,40 @@
+IndexIgnore *
+Options -Indexes 
+
+RewriteEngine on
+
+RewriteRule ^(config/|config\.php) - [F,L,NC]
+
+RewriteRule ^article/(.*?)\.html/? index.php?article&do=view&title=$1 [L,QSA] 
+RewriteRule ^thesis/(.*?)\.html/? index.php?thesis&do=view&title=$1 [L,QSA] 
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond     %{QUERY_STRING} $
+RewriteCond     $1 !^(index)
+RewriteRule ^(.*)/? index.php?$1&route=true [L,QSA] 
+
+RewriteRule ^me/? index.php?me [L,QSA] 
+
+RewriteRule ^home/? index.php?home [L,QSA] 
+
+
+
+RewriteRule    ^layout1.php index.php?layout1 [L,QSA] 
+RewriteRule    ^layout2.php index.php?layout2 [L,QSA]
+RewriteRule    ^cpanel.php index.php?cpanel [L,QSA]
+RewriteRule    ^event.php index.php?event [L,QSA]
+RewriteRule    ^search.php index.php?search [L,QSA]
+RewriteRule    ^news.php index.php?news [L,QSA]
+RewriteRule    ^article.php index.php?article [L,QSA]
+RewriteRule    ^filemanager.php index.php?filemanager [L,QSA]
+RewriteRule    ^backup.php index.php?backup [L,QSA]
+RewriteRule    ^teacher.php index.php?teacher [L,QSA]
+RewriteRule    ^page.php index.php?page [L,QSA]
+RewriteRule    ^tos.php index.php?tos [L,QSA]
+RewriteRule    ^help.php index.php?help [L,QSA]
+
+ErrorDocument 404 /404.html
+
+php_value session.use_only_cookies 1 
+php_value session.use_trans_sid 0
